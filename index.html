@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+
+        .mydata {
+
+            font-size: larger;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            padding-left: 10px;
+            text-align: left;
+        }
+
+        .name {
+            text-align: center;
+        }
+
+        .link {
+            color: blue;
+            padding-left: 20px;
+        }
+
+        .link:hover {
+            font-size: larger;
+            color: blue;
+        }
+
+        .button {
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        ul li {
+
+            padding: 15px 10px 17px 13px;
+            background-color: lightgrey;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        ul li:hover {
+            display: block;
+            cursor: pointer;
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="name">User List</h1>
+    <br>
+    <br>
+    <br>
+
+    <div class="mydata" id="myData">
+        <ul id="list"></ul>
+    </div>
+    <br>
+    <script src="myscript.js">
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        //     .then(function (response) {
+        //         return response.json();
+        //     })
+        //     .then(function (data) {
+        //         appendData(data);
+
+        //         console.log(data);
+        //     });
+
+        // function appendData(data) {
+        //     let mainContainer = document.getElementById("list");
+        //     for (let i = 0; i < data.length; i++) {
+
+        //         let div = document.createElement("li");
+        //         div.innerHTML = data[i].name + ',' + 'id:' + data[i].id + ', username:' + data[i].username + ', email:' + data[i].email + ', phone' + data[i].phone + ', website:' + data[i].website;
+
+        //         mainContainer.appendChild(div);
+
+
+
+
+        //     }
+
+        // };
+        
+
+        // let li = document.getElementById("list");
+        // li.setAttribute("data-id","data[i].userId");
+        // console.log(li.getAttribute("data-id"));
+        // li.onclick = function () {
+        //     location.href = "index2.html";
+        // }
+    </script>
+</body>
+
+</html>

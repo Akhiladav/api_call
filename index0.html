@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+
+        .mydata {
+
+            font-size: larger;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            padding-left: 10px;
+            text-align: left;
+        }
+
+        .name {
+            text-align: center;
+        }
+
+        .link {
+            color: blue;
+            padding-left: 20px;
+        }
+
+        .link:hover {
+            font-size: larger;
+            color: blue;
+        }
+
+        .button {
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        ul li {
+
+            padding: 15px 10px 17px 13px;
+            background-color: lightgrey;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        ul li:hover {
+            display: block;
+
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<script src="script.js"></script>
+
+<body>
+    
+    <h1 class="name">Post List</h1>
+    <br>
+    <br>
+    <a href="index.html" class="link"> Back To Users List</a>
+    <br>
+
+    <div class="mydata" id="myData">
+        <ul id="mylist"></ul>
+    </div>
+    <br>
+  
+    <script>
+
+
+ {
+
+
+    var inputValue;
+    var url = document.location.href,
+        params = url.split('?')[1].split('&'),
+        data = {}, tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split('=');
+         data[tmp[0]] = tmp[1];
+    }
+           
+    inputValue =data.Id;
+        
+            //document.querySelector('list').id;
+
+            if (inputValue === null) {
+                alert("post list");
+            }
+
+            else {
+
+                fetch(`https://jsonplaceholder.typicode.com/posts?userId=${inputValue}`)
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        let Container = document.getElementById("mylist");
+                        for (let i = 0; i < data.length; i++) {
+
+                            let div = document.createElement("li");
+                            div.innerHTML = 'id:' + data[i].id + ',' + 'userId:' + data[i].userId + ',' + 'title:' + data[i].title + ',' + 'body:' + data[i].body;
+
+                            Container.appendChild(div);
+                        }
+
+                    });
+            }
+        }
+        onclick();
+
+    </script>
+</body>
+
+</html>
